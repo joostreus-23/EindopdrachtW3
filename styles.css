@@ -1,0 +1,64 @@
+body {
+    background-color:wheat;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-color: black;
+    height: 100px;
+    margin: 0 10%;
+    text-align: center;
+
+}
+
+header h1 {
+    color: blanchedalmond;
+    font-family: fantasy;
+}
+
+
+/* ul {
+    list-style-type: none;
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 1500px;
+    min-width: 300px;
+    margin: 5px auto;
+    overflow: visible;
+    background-color: rgb(105, 92, 74);
+    border: solid 5px white;
+
+} */
+
+li {
+    list-style: none;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    /* flex-wrap: wrap;
+    justify-content: space-evenly; */
+}
+  
+#nieuwe-taak {
+    position: relative;
+}
+
+#label {
+    /* Position the label */
+    left: 8px;
+    position: absolute;
+    top: 0;
+
+    /* Hide it by default */
+    opacity: 0;
+    transition: 'all 200ms',
+}
+
+/* Show the label at desired position when the placeholder of input isn't shown */
+#nieuwe-taak input + label {
+    background: #FFF;
+    transform: translate(0, -50%);
+    opacity: 1;
+}
