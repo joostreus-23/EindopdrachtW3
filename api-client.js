@@ -21,13 +21,17 @@ const getTasks = async () => {
 // functie die taken toevoegd aan de database
 const postTasks = async (description) => {
     try {
-        fetch("https://wincacademydatabase.firebaseio.com/Joost/Tasks.json", {
+        const apiUrl = "https://wincacademydatabase.firebaseio.com/Joost/Tasks.json";
+        const result = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(description),
-        })
+        });
+        result
+        const updatedData = await getTasks();
+        return updatedData;
     } catch (error) {
         console.log(error);
     }
@@ -35,9 +39,13 @@ const postTasks = async (description) => {
 // functie die taken uit de database haalt
 const deleteTasks = async (id) => {
     try {
-        fetch(`https://wincacademydatabase.firebaseio.com/Joost/Tasks/${id}.json`, {
+        const apiUrl = `https://wincacademydatabase.firebaseio.com/Joost/Tasks/${id}.json`;
+        const result = await fetch(apiUrl, {
             method: 'DELETE',
         })
+        result
+        const updatedData = await getTasks();
+        return updatedData;
     } catch (error) {
         console.log(error);
     }
